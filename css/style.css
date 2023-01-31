@@ -289,7 +289,6 @@ body {
 
 .posts-list {
     max-width: 778px;
-    padding-right: 15px;
     box-sizing: border-box;
 }
 .post {
@@ -310,6 +309,9 @@ body {
 }
 .post-tag-item {
   margin-right: 20px;
+}
+.post-tag-item:last-child {
+	margin-right: 0;
 }
 .post-tag {
   font-size: 14px;
@@ -413,6 +415,7 @@ body {
   display: flex; 
 }
 .search-field {
+  flex-grow: 1;
   box-sizing: border-box;
   width: 224px;
   padding-left: 18px;
@@ -458,6 +461,7 @@ body {
   width: 100%;
   height: 48px;
   padding-left: 18px;
+  padding-right: 18px;
   font-family: opensans, arial, sans-serif; 
   font-size: 13px; 
   color: #000000;
@@ -559,6 +563,8 @@ body {
     opacity: 0.4;
 }   
 .merch-article {
+	display: flex;
+    flex-direction: column;
 	width: 31%;
 	text-align: center;
 }
@@ -566,7 +572,14 @@ body {
 	margin-left: 20px;
 	margin-right: 20px;
 }
+.merch-picture_img {
+	width: 100%;
+}
 .merch-description {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex-grow: 1;
 	position: relative;
 	z-index: 1;
 	text-align: left;
@@ -596,8 +609,9 @@ body {
 	text-decoration: underline;
 }
 .merch-price {
-    margin-top: auto;
-    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 .price-before {
 	font-size: 14px;
@@ -635,7 +649,8 @@ body {
   margin: 64px auto;
 }
  .social-block {
-  height: 84px;
+  padding-top: 36px;
+  padding-bottom: 36px;
   margin-bottom: 73px;
   background-color: #f4f7f6;
 }
@@ -897,8 +912,20 @@ body {
 @media (max-width: 640px) {
   .header {
     background-image: url("../img/banner-mobile.jpg");	
+    min-height: 630px;
   }  
+  .header-top {
+  	flex-direction: column-reverse;
+  }
+  .logo-link {
+  	width: 75%;
+  	margin-top: 180px;
+  }
+  .menu {
+  	align-self: flex-end;
+  }
   .header-title {
+  	margin-top: 44px;
   	font-size: 26px;
   }	
   .trend-article {
